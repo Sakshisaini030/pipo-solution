@@ -1,0 +1,79 @@
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scaleCheckmark {
+    0% {
+      transform: scale(0);
+    }
+    70% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .list {
+    list-style-type: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .list li {
+    background-color: purple;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+  }
+  
+  .list li:nth-child(1) { animation-delay: 0.1s; }
+  .list li:nth-child(2) { animation-delay: 0.2s; }
+  .list li:nth-child(3) { animation-delay: 0.3s; }
+  .list li:nth-child(4) { animation-delay: 0.4s; }
+  .list li:nth-child(5) { animation-delay: 0.5s; }
+  .list li:nth-child(6) { animation-delay: 0.6s; }
+  .list li:nth-child(7) { animation-delay: 0.7s; }
+  .list li:nth-child(8) { animation-delay: 0.8s; }
+  
+  .list li span {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .list li:hover span {
+    background-color: blue;
+  }
+  
+  .flaticon-check-mark {
+    margin-right: 15px;
+    color: #28a745;
+    font-size: 1.2em;
+    animation: scaleCheckmark 0.5s ease forwards;
+  }
+  
+  .list li span::after {
+    content: '→';
+    margin-left: auto;
+    color: #6c757d;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .list li:hover span::after {
+    opacity: 1;
+    transform: translateX(5px);
+  }
